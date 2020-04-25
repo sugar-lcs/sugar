@@ -1,13 +1,25 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
+    <button @click="wxApi.getLocation()">get location</button>
   </div>
 </template>
 
 <script>
+import wxApi from './assets/js/wxApi'
 export default {
-  name: 'App'
+  name: 'App',
+  watch: {
+    '$route.path' (v) {
+      console.log('route:', v)
+      wxApi.wxStart()
+    }
+  },
+  data () {
+    return {
+      wxApi
+    }
+  }
 }
 </script>
 

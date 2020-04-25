@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import wx from '../static/js/jweixin-1.6.0'
+window.wx = wx
 
 Vue.config.productionTip = false
 
